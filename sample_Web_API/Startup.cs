@@ -36,6 +36,7 @@ namespace sample_Web_API
             });
             
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "sample_Web_API", Version = "v1" });
@@ -55,6 +56,7 @@ namespace sample_Web_API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors( policy=> policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
             app.UseAuthorization();
 
