@@ -10,9 +10,8 @@ using sample_Web_API.Entities;
 
 namespace sample_Web_API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+   
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
         public UsersController(DataContext context)
